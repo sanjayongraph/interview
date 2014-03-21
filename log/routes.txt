@@ -1,0 +1,15 @@
+	
+
+    1) /                                    -       homepage - contain only signup/signout/signin button
+    2) /users/new                           -       user signup form (only user can signup)
+    3) /login                               -       users login form (user/superadmin/admin can login)
+    4) /users/dashboard                     -       user dashboard - only put welcome username
+    5) /admin/dashboard                     -       admin dashboard - put welcome admin_name (with his role - admin/super/admin),
+                                                    button for create new admin(if he is super admin)/user - there would be same user creation form (will redirect to 6),
+                                                    link for categories list -
+    6) /admin/users/new                     -       form for new user and admin creation (if super admin then he can create admin otherwise not)
+    7) /admin/users                         -       list of all users
+    8) /admin/categories                    -       list of all categories and its subcategories
+    9) /admin/categories/new                -       form for add new category
+
+	10) /admin/categories/question/new      -       form for adding new question to any category  

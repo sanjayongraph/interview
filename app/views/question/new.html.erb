@@ -1,0 +1,51 @@
+<% provide(:title, 'Add Questions') %>
+ 
+<div class="container containerwidth" style="background-color:#ffffff;border:1px solid #dedede;box-shadow:2px 2px 2px 2px #dedede;">
+
+<h1 align="center">Add Question</h1>
+<div class="form-group formwidth">
+  
+     <%= form_for @question, as: :question, url: admin_categories_question_new_path do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+       <div class="form-group">
+         <%= f.label :Category_name%>
+         <%= f.collection_select(:category, Category.where(:id=>$foo.id), :parent, :parent , class: "form-control") %>
+       </div>
+       
+      <div class="form-group">
+         <%= f.label :Subcategory_name%>
+          <%= f.collection_select(:subcategory_id, Category.where(:id=>$foo.id),  :id ,:category_name ,class: "form-control") %>
+       </div>
+       
+      <div class="form-group">
+        <%=f.label :Select_Question_Level%>
+        <%= f.select(:question_level, options_for_select([['1',1],['2',2],['3',3],['4',4],['5',5], ['6',6]])) %>
+      </div>
+      
+      <div class="form-group" >
+        <%=f.label :Add_Question %>
+        <%=f.text_area :question %>
+      </div>
+
+    <div id='TextBoxesGroup'>
+      <div id="TextBoxDiv1">
+        <%#= label_tag(:q, "option #1 :") %>
+        <%=f.label :option1 %>
+        <%#= text_field_tag(:q , '',:id =>'option1')%>
+        <%=f.text_field :option1 %>
+        <%= f.check_box :answer1 %>
+
+      </div>
+    </div>
+
+    <!-- <input type='button' value='Add More Options' id='addButton'><br/> -->
+    <!-- <input type='button' value='Remove' id='removeButton'><br/> -->
+
+    <%= button_tag "Add More Options", :id => "addButton", :type => "button" %>
+    <%= button_tag "Remove", :id => "removeButton", :type => "button" %>
+
+         <%= f.submit "Add", class: "btn btn-large btn-primary" %>
+         <%= link_to "Cancel",  question_path($foo.id), class: "btn btn-large btn-primary" %>
+     <% end %>
+</div>

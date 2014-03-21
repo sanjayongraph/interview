@@ -1,0 +1,16 @@
+<div class="img-circle">
+	<%#= render 'layouts/header',id: "logo"%>
+</div>
+<div align="center">
+
+<h1>Interview Tools</h1>
+    <div class="">
+    <% if signed_in? %>
+       <%else%>
+        
+        
+
+    	<%= link_to "Sign in", login_path, :class => 'btn btn-success btn-lg' %>
+    <%end%>
+    </div>
+</div>   

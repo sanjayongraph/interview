@@ -1,0 +1,1 @@
+ <%= form_for @add_questions , :controller => "add_questions", :action => "edit"  do |f| %>

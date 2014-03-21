@@ -1,0 +1,115 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%#= link_to "Interview Tools", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-left">
+          
+          <li><%#= link_to "Home", root_path %></li>
+          <li><%#= link_to "Help", '#' %></li>
+          <% if (signed_in? && current_user.role=='sadmin') || (signed_in? && current_user.role=='admin') %>
+            <li><%= link_to "Manage User", admin_users_path %></li>
+            <li><%= link_to "Manage Category", admin_categories_path %></li>
+            <!--<li><%#= link_to 'Create', admin_users_new_path %></li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                View <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+
+                <li><%#= link_to 'Users', admin_users_path %></li>
+                <li><%#= link_to 'Categories', :controller => "category", :action => "show" %></li>
+
+              </ul>
+            </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Add <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+
+                <li><%#= link_to "New Category", :controller => "category", :action => "new" %></li>
+
+                <li><%#= link_to 'Sub Category', :controller => "subcategory", :action => "new" %></li>
+
+                 <li><%#= link_to "Questions", :controller => "add_questions", :action => "new" %></li>
+
+              </ul>
+            </li>-->
+
+            </ul>
+
+            <ul class="nav pull-right">
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", '#' %></li>
+                <li><%= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+
+            <%# elsif signed_in? && current_user.role=='admin'%>
+            <li><%#= link_to "Users", '#' %></li>
+            <li><%#= link_to "Manage User", admin_users_path %></li>
+            <li><%#= link_to "Manage Category", :controller => "category", :action => "show" %></li>
+            
+
+            <!--<li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                View <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+
+                <li><%#= link_to 'Users', admin_users_path %></li>
+                <li><%#= link_to 'Categories', :controller => "category", :action => "show" %></li>
+
+              </ul>
+            </li>
+
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Add <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+
+                <li><%#= link_to "New Category", :controller => "category", :action => "new" ,:class =>'btn btn-success btn-lg'%></li>
+
+                <li><%#= link_to 'Sub Category', :controller => "subcategory", :action => "new" , :class => '                 btn btn-success btn-lg'%></li>
+
+                 <li><%#= link_to "Questions", :controller => "add_questions", :action => "new" ,:class =>'btn btn-success btn-lg'%></li>
+
+              </ul>
+            </li>-->
+
+
+            <!--<li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%#= link_to "Profile", '#' %></li>
+                <li><%#= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%#= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>-->
+
+          <% else %>
+            <li><%= link_to "Sign in", login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
